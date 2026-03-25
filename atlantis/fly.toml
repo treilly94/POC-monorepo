@@ -7,10 +7,17 @@ app = 'atlantis-lively-voice-8481'
 primary_region = 'lhr'
 
 [build]
+  image='ghcr.io/runatlantis/atlantis:latest'
 
 [env]
   ATLANTIS_GH_USER='treilly94'
   ATLANTIS_REPO_ALLOWLIST='github.com/treilly94/*'
+  ATLANTIS_DATA_DIR="/atlantis"
+
+[mounts]
+  source = "atlantis_data"
+  destination = "/atlantis"
+  scheduled_snapshots = false
 
 [http_service]
   internal_port = 4141
