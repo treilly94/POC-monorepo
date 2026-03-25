@@ -1,0 +1,26 @@
+# fly.toml app configuration file generated for atlantis-lively-voice-8481 on 2026-03-25T22:14:54Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'atlantis-lively-voice-8481'
+primary_region = 'lhr'
+
+[build]
+
+[env]
+  ATLANTIS_GH_USER='treilly94'
+  ATLANTIS_REPO_ALLOWLIST='github.com/treilly94/*'
+
+[http_service]
+  internal_port = 4141
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
