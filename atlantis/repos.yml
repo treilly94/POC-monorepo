@@ -1,0 +1,5 @@
+policies:
+  policy_sets:
+    - name: default
+      path: /policies
+      source: local
