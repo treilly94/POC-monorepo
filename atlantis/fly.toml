@@ -13,11 +13,21 @@ primary_region = 'lhr'
   ATLANTIS_GH_USER='treilly94'
   ATLANTIS_REPO_ALLOWLIST='github.com/treilly94/*'
   ATLANTIS_DATA_DIR="/atlantis"
+  ATLANTIS_ENABLE_POLICY_CHECKS=true
+  ATLANTIS_REPO_CONFIG="/repos.yml"
 
 [mounts]
   source = "atlantis_data"
   destination = "/atlantis"
   scheduled_snapshots = false
+
+[[files]]
+  guest_path = "/repos.yml"
+  local_path = "repos.yml"
+
+[[files]]
+  guest_path = "/policies/base.rego"
+  local_path = "policies/base.rego"
 
 [http_service]
   internal_port = 4141
