@@ -1,0 +1,4 @@
+name: prod
+variables:
+  - name: url
+    value: http://localhost:8081
